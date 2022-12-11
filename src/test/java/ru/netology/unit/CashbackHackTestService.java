@@ -1,25 +1,24 @@
 package ru.netology.unit;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
 
 public class CashbackHackTestService {
     private CashbackHackService cashbackHackService = new CashbackHackService();
 
     @Test
     public void underThousand() {
-        assertEquals(cashbackHackService.remain(113), 887);
+        assertEquals(887, cashbackHackService.remain(113));
     }
 
     @Test
     public void aboveThousand() {
-        assertEquals(cashbackHackService.remain(5800), 200);
+        assertEquals(200, cashbackHackService.remain(5800));
     }
 
     @Test
-    public void shouldBeZero() {
-        assertEquals(cashbackHackService.remain(1000), 0);
+    public void shouldFall() {
+        assertEquals(0, cashbackHackService.remain(1000));
     }
-
 }
